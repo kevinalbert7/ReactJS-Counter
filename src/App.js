@@ -15,21 +15,21 @@ class App extends React.Component {
   }
   
   handlePlusClick = () => {
-    this.setState({ increment: this.state.count + 1 })
-    console.log(this.state)
+    this.setState({ count: this.state.count + 1 })
   }
   
   handleMinusClick = () => {
-    this.setState({ substract: this.state.count - 1 })
-    console.log(this.state)
+      if( this.state.count > 0 ) {
+        this.setState({ count: this.state.count - 1 })
+      }
+
   }
 
   render() {
-      console.log("render")
     return (
         <>
         <h1>Counter</h1>
-        <Counter count={this.props.count}/>
+        <Counter count={this.state.count} increment={this.handlePlusClick} substract ={this.handleMinusClick}/>
         </>
     )
   }
