@@ -15,7 +15,9 @@ class App extends React.Component {
   }
   
   handlePlusClick = () => {
+    if( this.state.count < 100 ) {
     this.setState({ count: this.state.count + 1 })
+    }
   }
   
   handleMinusClick = () => {
@@ -29,6 +31,7 @@ class App extends React.Component {
     return (
         <>
         <h1>Counter</h1>
+        <Counter count={this.state.count} increment={this.handlePlusClick} substract ={this.handleMinusClick}/>
         <Counter count={this.state.count} increment={this.handlePlusClick} substract ={this.handleMinusClick}/>
         </>
     )
