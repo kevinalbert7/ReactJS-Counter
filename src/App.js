@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   handleMinusClick2 = () => {
-    if (this.state.count1 > 0) {
+    if (this.state.count1 >= 0) {
       if (this.state.count1 < this.state.count2) {
         this.setState({ count2: this.state.count2 - 10 })
       } else {
