@@ -14,34 +14,35 @@ class App extends React.Component {
   }
 
   handlePlusClick1 = () => {
-    // count1 < 100
-
-    if (this.state.count1 < 100 && this.state.count1 < this.state.count2) {
-      this.setState({ count1: this.state.count1 +=10 })
-    } else if (this.state.count1 === this.state.count2) {
-      this.setState({ count1: this.state.count1 + 1, count2: this.state.count2 + 1 })
+    if (this.state.count1 < 100) {
+      if (this.state.count1 < this.state.count2) {
+        this.setState({ count1: this.state.count1 + 10 })
+      } else {
+        this.setState({ count1: this.state.count1 + 10, count2: this.state.count2 + 10 })
+      }
     }
-  }
+  }  
   
   handleMinusClick1 = () => {
     if (this.state.count1 > 0) {
-      this.setState({ count1: this.state.count1 - 1 })
+      this.setState({ count1: this.state.count1 - 10 })
     }
   }
 
   handlePlusClick2 = () => {
     if (this.state.count2 < 100) {
-      this.setState({ count2: this.state.count2 + 1 })
+      this.setState({ count2: this.state.count2 + 10 })
     }
   }
 
   handleMinusClick2 = () => {
-    if (this.state.count1 > 0 && this.state.count1 < this.state.count2) {
-      this.setState({ count2: this.state.count2 - 1 })
-    } else if (this.state.count2 === this.state.count1) {
-      this.setState({ count1: this.state.count1 - 1, count2: this.state.count2 - 1 })
+    if (this.state.count1 > 0) {
+      if (this.state.count1 < this.state.count2) {
+        this.setState({ count2: this.state.count2 - 10 })
+      } else {
+        this.setState({ count1: this.state.count1 - 10, count2: this.state.count2 - 10 })
+      }
     }
-    
   }
 
   render() {
