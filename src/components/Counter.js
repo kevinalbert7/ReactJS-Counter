@@ -1,16 +1,16 @@
 import React from "react"
+import './../App.css';
 
 class Counter extends React.Component {
     constructor () {
         super () 
-
     }
     render () {
         return (
-            <div>
+            <div className="counter-container">
+                <button type="button" onClick={this.props.increment}>+</button>
                 <h2>{this.props.count}</h2>
-                <button onClick={this.props.increment}>+</button>
-                <button onClick={this.props.substract}>-</button>
+                <button type="button" onClick={this.props.substract}>-</button>
             </div>
         )
     }
